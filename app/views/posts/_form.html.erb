@@ -1,0 +1,20 @@
+<%= simple_form_for @post, :html => { :class => 'form-vertical' } do |f| %>
+    <div class="form-inputs">
+        
+        <%= f.association :user, as: :select, collection: User.all.order(name: :asc).map{|u| ["#{u.name} - #{u.email}", u.id] }, prompt: 'Select User' %>
+        <%= f.association :publisher, collection: Publisher.all.order(name: :asc).map {|p| [p.name, p.id]}, prompt: 'Select Publisher' %>
+        <%= f.input :title %>
+        <%= f.input :caption %>
+        <%= f.input :content %>
+        <%= f.input :publication_date %>
+        <%= f.input :image %>
+        <%= f.input :status, as: :radio_buttons, collection: [['Enabled', true], ['Disabled',false]] %>
+        <%= f.association :markers, as: :check_boxes, collection: Marker.all.order(name: :asc).map {|m| [m.name, m.id]} %>
+    </div>
+
+    <div class="form-actions">
+        <%= f.button :submit, :class => 'btn-primary' %>
+        <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            posts_path, :class => 'btn btn-default' %>
+    </div>
+<% end %>
