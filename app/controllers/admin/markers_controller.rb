@@ -1,4 +1,4 @@
-class MarkersController < ApplicationController
+class Admin::MarkersController < ApplicationController
   before_action :set_marker, only: [:show, :edit, :update, :destroy]
 
   # GET /markers

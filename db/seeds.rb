@@ -35,3 +35,11 @@ markers = Marker.create!([
 		status: true
 	)
 end
+
+User.create!([
+	{
+		name: 'admin',
+		email: 'admin@portal.com',
+		password: '123456'
+	}
+])

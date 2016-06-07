@@ -1,4 +1,4 @@
-<%= simple_form_for @marker, :html => { :class => 'form-vertical' } do |f| %>
+<%= simple_form_for [:admin, @marker], :html => { :class => 'form-vertical' } do |f| %>
 	<div class="form-inputs">
 		<%= f.input :name %>
 	</div>
@@ -6,6 +6,7 @@
 	<div class="form-actions">
 		<%= f.button :submit, :class => 'btn-primary' %>
 		<%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-			markers_path, :class => 'btn btn-default' %>
+			admin_markers_path, :class => 'btn btn-default' %>
 	</div>
 <% end %>
+
