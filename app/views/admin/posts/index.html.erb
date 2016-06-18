@@ -1,5 +1,8 @@
 <%- model_class = Post -%>
 <div class="page-header">
+	<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_admin_post_path,
+            :class => 'btn btn-primary pull-right' %>
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 <table class="table table-striped">
@@ -38,5 +41,10 @@
     <% end %>
   </tbody>
 </table>
+
+<div class="text-center">
+    <%= paginate @posts %> </br>
+    <%= page_entries_info @posts %> </br>
+</div>
 
 

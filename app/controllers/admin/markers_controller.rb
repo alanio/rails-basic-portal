@@ -4,7 +4,7 @@ class Admin::MarkersController < ApplicationController
   # GET /markers
   # GET /markers.json
   def index
-    @markers = Marker.all
+    @markers = Marker.page(params[:page]).order("name ASC")
   end
 
   # GET /markers/1

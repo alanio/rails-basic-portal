@@ -4,7 +4,7 @@ class Admin::PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all.order('publication_date DESC')
+    @posts = Post.page(params[:page]).order('publication_date DESC')
   end
 
   # GET /posts/1

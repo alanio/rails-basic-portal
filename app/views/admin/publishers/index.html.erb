@@ -2,7 +2,7 @@
 <div class="page-header">
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_admin_publisher_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-primary pull-right' %>
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 <table class="table table-striped">
@@ -36,3 +36,8 @@
   </tbody>
 </table>
 
+<div class="text-center">
+    <%= paginate @publishers %> </br>
+    <%= page_entries_info @publishers %> </br>
+
+</div>
